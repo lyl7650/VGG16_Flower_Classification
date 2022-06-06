@@ -70,9 +70,7 @@ for epoch in range(EPOCH):
         # Forward + Backward + Optimize
         loss.backward()
         avg_loss += loss.data
-        #wandb.watch(model)
         cnt += 1
-        wandb.log({"loss": loss.data})
         if step%100==0:
             print("[E: %d] loss: %f, avg_loss: %f" % (epoch, loss.data, avg_loss/cnt))
         #loss.backward()
